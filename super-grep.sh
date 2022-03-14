@@ -64,7 +64,7 @@ function __main_script__ {
 	__needs_arg__
 
 	# Capture the results in an array
-	_chooser_array=( "$(grep -rn "${_arg}" ${HOME}/*)" )
+	_chooser_array=( "$(grep -rn "${_arg}" ${HOME}/* --exclude-dir={.cache,Dropbox,Music,Pictures,Videos,Wallpapers})" )
 
 	# If <pattern> is not found, warn user and exit
 	__arg_not_found__
